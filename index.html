@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Header Example</title>
+    <title>Blue Centered Header</title>
     <style>
         body {
             margin: 0;
@@ -11,24 +11,31 @@
         }
         
         .header-container {
-            margin: 0 auto; /* This centers the container */
-            max-width: 1200px; /* Adjust this to control the maximum width */
-            padding: 20px;
+            margin: 40px auto; /* Increased margin top/bottom */
+            max-width: 1000px; /* Slightly narrower container for more side margin */
+            padding: 30px 40px; /* Increased padding (top/bottom, left/right) */
             text-align: center;
-            background-color: #f8f8f8; /* Optional background color */
-            border-bottom: 1px solid #e7e7e7; /* Optional border */
+            background-color: #1565c0; /* Nice blue color */
+            color: white; /* White text for contrast */
+            border-radius: 8px; /* Slightly rounded corners */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
         }
         
         h1 {
-            color: #333;
-            margin: 0;
+            margin: 0 0 10px 0; /* Space below heading */
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
     <div class="header-container">
         <h1>Your Centered Header</h1>
-        <p>Optional subtitle or navigation can go here</p>
+        <p class="subtitle">With increased margins and blue styling</p>
     </div>
     
     <!-- Rest of your page content -->
