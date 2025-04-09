@@ -10,56 +10,51 @@
         :root {
             --primary: #2c3e50;
             --secondary: #2980b9;
-            --accent: #2c3e50; /* Changed from red to primary color */
+            --accent: #2c3e50;
             --light: #f9f9f9;
             --dark: #1a252f;
             --blue-card: #f0f7fc;
             --font-main: 'Open Sans', sans-serif;
             --font-heading: 'Libre Baskerville', serif;
             --text-color: #333;
-            --section-margin: 40px;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: var(--font-main);
             color: var(--text-color);
             line-height: 1.6;
-            background-color: #fff;
+            background-color: var(--light);
             overflow-x: hidden;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--section-margin);
+            padding: 0 20px; /* Reduced padding for better spacing */
         }
-        
-        /* Header with margins */
+
+        /* Header - Centered */
         header {
             background-color: var(--primary);
             color: white;
-            padding: 100px 0;
             text-align: center;
-            margin: 0 var(--section-margin);
-            max-width: calc(1200px - 2 * var(--section-margin));
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 100px 0;
         }
-        
+
         h1 {
             font-family: var(--font-heading);
             font-size: 2.8rem;
             margin-bottom: 15px;
             color: white;
         }
-        
+
         .tagline {
             font-size: 1.2rem;
             font-weight: 300;
@@ -67,9 +62,9 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255, 255, 255, 0.9);
         }
-        
+
         .title-badge {
             background-color: var(--secondary);
             color: white;
@@ -78,77 +73,61 @@
             border-radius: 30px;
             font-weight: 600;
             font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Navigation with same margins */
+
+        /* Navigation - Centered */
         nav {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
-            margin: 0 var(--section-margin);
-            max-width: calc(1200px - 2 * var(--section-margin));
-            border-radius: 10px;
-            top: 20px;
         }
-        
-        /* Text color consistency */
-        .profile-content p,
-        .achievements li,
-        .project-info p,
-        .philanthropy p,
-        .board-desc {
-            color: var(--text-color);
-        }
-        
-        .highlight {
-            color: var(--text-color);
-            font-weight: 600;
-            /* Optional underline for highlights */
-            /* border-bottom: 2px solid var(--secondary); */
-        }
-        
-        /* Rest of your existing CSS remains unchanged */
+
         .nav-container {
             display: flex;
-            flex-direction: column;
+            justify-content: center; /* Centers navigation items */
+            align-items: center;
             padding: 15px 30px;
         }
-        
-        .mobile-nav-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        /* Profile Content Styling */
+        .profile-content {
+            text-align: center; /* Ensures all content inside is centered */
+            margin-top: 50px;
         }
-        
-        .logo {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--primary);
+
+        .profile-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: var(--text-color);
         }
-        
-        /* ... (keep all your existing CSS styles) ... */
-        
+
+        /* Highlight Class */
+        .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Responsive Design Adjustments */
         @media (max-width: 768px) {
-            :root {
-                --section-margin: 20px;
+            h1 {
+                font-size: 2.2rem;
             }
-            
-            header, nav {
-                margin: 0 var(--section-margin);
+
+            .tagline {
+                font-size: 1rem;
             }
-            
-            header {
-                padding: 80px 0;
+
+            .profile-content p {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header with margins -->
+    <!-- Centered Header -->
     <header data-aos="fade-down">
         <div class="container">
             <h1>Chris</h1>
@@ -156,63 +135,36 @@
             <div class="title-badge">16+ Years C-Level Experience</div>
         </div>
     </header>
-    
-    <!-- Navigation with same margins -->
+
+    <!-- Navigation -->
     <nav data-aos="fade-down" data-aos-delay="100">
-        <div class="container nav-container">
-            <div class="mobile-nav-header">
-                <div class="logo">Chris</div>
-                <button class="menu-toggle">☰</button>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#boards">Leadership</a></li>
-                <li><a href="#philanthropy">Philanthropy</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="nav-container">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
-    
-    <!-- Rest of your existing sections... -->
-    <section id="profile">
+
+    <!-- Profile Content -->
+    <section class="profile-content" id="about" data-aos="fade-up">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Professional Profile</h2>
-            <div class="profile">
-                <div class="profile-img" data-aos="fade-right"></div>
-                <div class="profile-content" data-aos="fade-left" data-aos-delay="200">
-                    <h2>Creating Value Through Development</h2>
-                    <p>A <span class="highlight">civil engineer</span> by profession who has been a <span class="highlight">C-Level executive</span> for more than 16 years. In his former years having worked as a contractor, a consultant and a developer, Chris has successfully transitioned to become an <span class="highlight">experienced real estate developer</span> spearheading developments across the whole real estate value chain.</p>
-                    <p>With <span class="highlight">over 18 years' global experience</span>, Chris took a lead in planning, structuring (financial and legal), conceptualizing and executing mixed use developments, satellite cities and urban nodes in the <span class="highlight">Middle East and Africa</span>.</p>
-                </div>
-            </div>
+            <p>
+                With over <span class="highlight">16 years of experience</span> in the real estate and engineering industries,
+                I have developed a strong expertise in managing large-scale projects and leading teams to success.
+            </p>
+            <p>
+                My focus is on delivering exceptional results while maintaining transparency and integrity in every project.
+            </p>
         </div>
     </section>
-    
-    <!-- All other sections remain exactly the same as before -->
-    
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 800,
             once: true,
             easing: 'ease-out-quad'
-        });
-        
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
         });
     </script>
 </body>
