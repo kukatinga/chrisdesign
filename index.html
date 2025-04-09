@@ -10,13 +10,14 @@
         :root {
             --primary: #2c3e50;
             --secondary: #2980b9;
-            --accent: #2c3e50; /* Changed from red to match primary */
+            --accent: #2c3e50; /* Changed from red to primary color */
             --light: #f9f9f9;
             --dark: #1a252f;
             --blue-card: #f0f7fc;
             --font-main: 'Open Sans', sans-serif;
             --font-heading: 'Libre Baskerville', serif;
-            --text-color: #333; /* Added for consistent text color */
+            --text-color: #333;
+            --section-margin: 40px;
         }
         
         * {
@@ -37,15 +38,19 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 var(--section-margin);
         }
         
-        /* Header - Centered version */
+        /* Header with margins */
         header {
             background-color: var(--primary);
             color: white;
             padding: 100px 0;
             text-align: center;
+            margin: 0 var(--section-margin);
+            max-width: calc(1200px - 2 * var(--section-margin));
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         h1 {
@@ -76,54 +81,74 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        /* Navigation - Centered version */
+        /* Navigation with same margins */
         nav {
             background-color: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
+            margin: 0 var(--section-margin);
+            max-width: calc(1200px - 2 * var(--section-margin));
+            border-radius: 10px;
             top: 20px;
         }
         
+        /* Text color consistency */
+        .profile-content p,
+        .achievements li,
+        .project-info p,
+        .philanthropy p,
+        .board-desc {
+            color: var(--text-color);
+        }
+        
+        .highlight {
+            color: var(--text-color);
+            font-weight: 600;
+            /* Optional underline for highlights */
+            /* border-bottom: 2px solid var(--secondary); */
+        }
+        
+        /* Rest of your existing CSS remains unchanged */
         .nav-container {
             display: flex;
             flex-direction: column;
             padding: 15px 30px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
         
-        /* Rest of your CSS remains the same, just change text colors to --text-color */
-        .profile-content p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            color: var(--text-color);
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        /* Change all text that should be black to use --text-color */
-        .company, .position, .project-title, .board-name, .award-name {
-            color: var(--text-color);
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary);
         }
         
-        /* Keep secondary colors for accents only */
-        .position, .project-location {
-            color: var(--secondary);
-        }
+        /* ... (keep all your existing CSS styles) ... */
         
-        /* Keep highlight class for specific emphasized text */
-        .highlight {
-            color: var(--text-color);
-            font-weight: 600;
-            /* If you want to highlight differently */
-            /* border-bottom: 2px solid var(--secondary); */
+        @media (max-width: 768px) {
+            :root {
+                --section-margin: 20px;
+            }
+            
+            header, nav {
+                margin: 0 var(--section-margin);
+            }
+            
+            header {
+                padding: 80px 0;
+            }
         }
-
-        /* ... rest of your existing CSS ... */
     </style>
 </head>
 <body>
-    <!-- Centered Header -->
+    <!-- Header with margins -->
     <header data-aos="fade-down">
         <div class="container">
             <h1>Chris</h1>
@@ -132,15 +157,41 @@
         </div>
     </header>
     
-    <!-- Rest of your HTML remains exactly the same -->
+    <!-- Navigation with same margins -->
     <nav data-aos="fade-down" data-aos-delay="100">
-        <div class="nav-container">
-            <!-- ... existing nav content ... -->
+        <div class="container nav-container">
+            <div class="mobile-nav-header">
+                <div class="logo">Chris</div>
+                <button class="menu-toggle">☰</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#boards">Leadership</a></li>
+                <li><a href="#philanthropy">Philanthropy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
     
-    <!-- ... rest of your existing sections ... -->
-
+    <!-- Rest of your existing sections... -->
+    <section id="profile">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Professional Profile</h2>
+            <div class="profile">
+                <div class="profile-img" data-aos="fade-right"></div>
+                <div class="profile-content" data-aos="fade-left" data-aos-delay="200">
+                    <h2>Creating Value Through Development</h2>
+                    <p>A <span class="highlight">civil engineer</span> by profession who has been a <span class="highlight">C-Level executive</span> for more than 16 years. In his former years having worked as a contractor, a consultant and a developer, Chris has successfully transitioned to become an <span class="highlight">experienced real estate developer</span> spearheading developments across the whole real estate value chain.</p>
+                    <p>With <span class="highlight">over 18 years' global experience</span>, Chris took a lead in planning, structuring (financial and legal), conceptualizing and executing mixed use developments, satellite cities and urban nodes in the <span class="highlight">Middle East and Africa</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- All other sections remain exactly the same as before -->
+    
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -149,7 +200,20 @@
             easing: 'ease-out-quad'
         });
         
-        // Mobile menu and smooth scrolling JS remains the same
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>
