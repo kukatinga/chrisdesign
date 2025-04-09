@@ -29,23 +29,25 @@
             font-family: var(--font-main);
             color: var(--text-color);
             line-height: 1.6;
-            background-color: var(--light);
+            background-color: #fff;
             overflow-x: hidden;
         }
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 700px; /* Adjusted for centered header */
             margin: 0 auto;
-            padding: 0 20px; /* Reduced padding for better spacing */
+            padding: 0 20px;
         }
 
-        /* Header - Centered */
+        /* Header - Centered container only */
         header {
+            display: flex;
+            justify-content: center;
             background-color: var(--primary);
             color: white;
-            text-align: center;
             padding: 100px 0;
+            text-align: center;
         }
 
         h1 {
@@ -62,7 +64,7 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255,255,255,0.9);
         }
 
         .title-badge {
@@ -73,29 +75,23 @@
             border-radius: 30px;
             font-weight: 600;
             font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        /* Navigation - Centered */
         nav {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
-            top: 0;
+            top: 20px;
             z-index: 100;
         }
 
         .nav-container {
             display: flex;
-            justify-content: center; /* Centers navigation items */
-            align-items: center;
+            flex-direction: column;
             padding: 15px 30px;
-        }
-
-        /* Profile Content Styling */
-        .profile-content {
-            text-align: center; /* Ensures all content inside is centered */
-            margin-top: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .profile-content p {
@@ -104,26 +100,20 @@
             color: var(--text-color);
         }
 
-        /* Highlight Class */
-        .highlight {
+        .company, .position, .project-title, .board-name, .award-name {
+            color: var(--text-color);
+        }
+
+        .position, .project-location {
             color: var(--secondary);
+        }
+
+        .highlight {
+            color: var(--text-color);
             font-weight: 600;
         }
 
-        /* Responsive Design Adjustments */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .tagline {
-                font-size: 1rem;
-            }
-
-            .profile-content p {
-                font-size: 1rem;
-            }
-        }
+        /* Add any additional section styling as needed */
     </style>
 </head>
 <body>
@@ -139,25 +129,16 @@
     <!-- Navigation -->
     <nav data-aos="fade-down" data-aos-delay="100">
         <div class="nav-container">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <!-- Example nav content -->
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Profile Content -->
-    <section class="profile-content" id="about" data-aos="fade-up">
-        <div class="container">
-            <p>
-                With over <span class="highlight">16 years of experience</span> in the real estate and engineering industries,
-                I have developed a strong expertise in managing large-scale projects and leading teams to success.
-            </p>
-            <p>
-                My focus is on delivering exceptional results while maintaining transparency and integrity in every project.
-            </p>
-        </div>
-    </section>
+    <!-- Add other sections below as needed -->
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
