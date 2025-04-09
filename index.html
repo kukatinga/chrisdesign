@@ -3,39 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Centered Header</title>
+    <title>Dark Blue Header</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light page background */
         }
         
         .header-container {
-            margin: 40px auto; /* Increased margin top/bottom */
-            max-width: 1000px; /* Slightly narrower container for more side margin */
-            padding: 30px 40px; /* Increased padding (top/bottom, left/right) */
+            margin: 40px auto;
+            max-width: 1000px;
+            padding: 40px;
             text-align: center;
-            background-color: #1565c0; /* Nice blue color */
-            color: white; /* White text for contrast */
-            border-radius: 8px; /* Slightly rounded corners */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+            background-color: #0d1b2a; /* Dark navy blue */
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Image styling - replace the src with your direct image URL */
+        .header-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2; /* Subtle image overlay */
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
         }
         
         h1 {
-            margin: 0 0 10px 0; /* Space below heading */
-            font-size: 2.5em;
+            margin: 0 0 15px 0;
+            font-size: 2.8em;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
         .subtitle {
-            font-size: 1.2em;
+            font-size: 1.3em;
             opacity: 0.9;
+            color: #e0e0e0;
+        }
+        
+        /* Optional gradient overlay to darken the image */
+        .header-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(13,27,42,0.7), rgba(13,27,42,0.9));
+            z-index: 0;
         }
     </style>
 </head>
 <body>
     <div class="header-container">
-        <h1>Your Centered Header</h1>
-        <p class="subtitle">With increased margins and blue styling</p>
+        <!-- Replace with your direct image URL -->
+        <img class="header-image" src="YOUR_DIRECT_IMAGE_URL_HERE" alt="Background">
+        
+        <div class="header-content">
+            <h1>Your Header Title</h1>
+            <p class="subtitle">With dark blue styling and image background</p>
+        </div>
     </div>
     
     <!-- Rest of your page content -->
